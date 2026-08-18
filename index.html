@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wajahat Wasti — AX2012 & D365 F&O Technical Consultant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wajahat Wasti — Software Engineer, 5+ years experience across AX2012 and Dynamics 365 Finance & Operations, technical and functional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f5f0;
+    --card:#ffffff;
+    --ink-900:#181c22;
+    --ink-600:#565f6c;
+    --ink-400:#8b93a0;
+    --line:#e6e1d6;
+    --blue:#0b5fa6;
+    --blue-soft:#e7f0f8;
+    --copper:#bd6a2e;
+    --copper-soft:#f7ece0;
+    --ok:#2f7d5b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink-900); font-family:'Inter',sans-serif; line-height:1.5;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .display{font-family:'Space Grotesk',sans-serif;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+  /* background schema grid */
+  .grid-bg{
+    background-image:
+      linear-gradient(rgba(24,28,34,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24,28,34,0.035) 1px, transparent 1px);
+    background-size:38px 38px;
+  }
+
+  /* NAV */
+  header.nav{
+    position:sticky; top:0; z-index:50; background:rgba(247,245,240,0.85); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1120px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px;}
+  .brand .dot{width:9px; height:9px; border-radius:2px; background:var(--blue);}
+  nav.links{display:flex; gap:28px; font-size:13.5px; color:var(--ink-600); font-weight:500;}
+  nav.links a:hover{color:var(--blue);}
+  .nav-cta{font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; background:var(--ink-900); color:#fff; padding:9px 16px; border-radius:8px;}
+
+  /* HERO */
+  .hero{padding:76px 0 64px; position:relative;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:11.5px;
+    letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); font-weight:600;
+    border:1px solid #cfe0ef; background:var(--blue-soft); padding:6px 12px; border-radius:100px;
+  }
+  .eyebrow .pulse{width:6px; height:6px; border-radius:50%; background:var(--ok);}
+  .hero h1{font-family:'Space Grotesk',sans-serif; font-size:46px; font-weight:700; letter-spacing:-0.02em; line-height:1.08; margin-top:20px;}
+  .hero h1 .hl{color:var(--blue);}
+  .hero p.lead{margin-top:18px; font-size:16px; color:var(--ink-600); max-width:520px; line-height:1.7;}
+  .hero-stats{display:flex; gap:32px; margin-top:32px;}
+  .stat b{font-family:'Space Grotesk',sans-serif; font-size:26px; display:block;}
+  .stat span{font-size:12px; color:var(--ink-400); font-family:'JetBrains Mono',monospace;}
+  .hero-cta{display:flex; gap:12px; margin-top:34px;}
+  .btn-primary{background:var(--blue); color:#fff; padding:12px 22px; border-radius:9px; font-weight:600; font-size:13.5px;}
+  .btn-ghost{border:1px solid var(--line); padding:12px 22px; border-radius:9px; font-weight:600; font-size:13.5px; color:var(--ink-900);}
+
+  /* photo + schema card */
+  .photo-wrap{position:relative;}
+  .photo-card{
+    background:var(--card); border:1px solid var(--line); border-radius:20px; padding:14px;
+    box-shadow:0 24px 48px -24px rgba(24,28,34,0.18);
+  }
+  .photo-card img{width:100%; display:block; border-radius:14px; aspect-ratio:1/1.05; object-fit:cover;}
+  .schema-tag{
+    position:absolute; background:var(--ink-900); color:#fff; font-family:'JetBrains Mono',monospace;
+    font-size:10.5px; padding:8px 12px; border-radius:9px; box-shadow:0 12px 24px -10px rgba(0,0,0,0.35);
+    display:flex; align-items:center; gap:7px;
+  }
+  .schema-tag .k{color:#7fb2e5;}
+  .schema-tag.t1{top:6%; left:-8%;}
+  .schema-tag.t2{bottom:10%; right:-9%;}
+  .schema-tag .led{width:6px;height:6px;border-radius:50%;background:var(--ok);}
+
+  /* SECTION LABEL */
+  .section{padding:64px 0;}
+  .section-label{display:flex; align-items:center; gap:14px; margin-bottom:34px;}
+  .section-label .idx{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--blue); border:1px solid #cfe0ef; padding:3px 9px; border-radius:6px; font-weight:700;}
+  .section-label h2{font-family:'Space Grotesk',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.01em;}
+  .section-label .rule{flex:1; height:1px; background:var(--line);}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:48px;}
+  .about-grid p{color:var(--ink-600); font-size:15px; line-height:1.8; margin-bottom:16px;}
+  .about-side{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px;}
+  .about-side .row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:13.3px;}
+  .about-side .row:last-child{border-bottom:none;}
+  .about-side .row span:first-child{color:var(--ink-400); font-family:'JetBrains Mono',monospace; font-size:11.5px;}
+  .about-side .row span:last-child{font-weight:600;}
+
+  /* SKILLS */
+  .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .skill-card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px;}
+  .skill-card .sk-head{display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+  .skill-card .sk-ic{width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; color:#fff;}
+  .skill-card h3{font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:700;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:7px;}
+  .tag{font-family:'JetBrains Mono',monospace; font-size:11px; padding:5px 10px; border-radius:6px; background:var(--paper); border:1px solid var(--line); color:var(--ink-600); font-weight:500;}
+
+  /* EXPERIENCE TIMELINE */
+  .timeline{position:relative; padding-left:28px; border-left:2px solid var(--line);}
+  .t-item{position:relative; padding-bottom:36px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{content:""; position:absolute; left:-35px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--blue); border:3px solid var(--paper); box-shadow:0 0 0 2px var(--blue);}
+  .t-item .t-role{font-family:'Space Grotesk',sans-serif; font-size:16.5px; font-weight:700;}
+  .t-item .t-meta{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--blue); margin-top:3px;}
+  .t-item p{font-size:13.7px; color:var(--ink-600); margin-top:10px; max-width:640px; line-height:1.7;}
+
+  /* SERVICES / WHAT I DO */
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .svc{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px;}
+  .svc .n{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--copper); font-weight:700;}
+  .svc h4{font-family:'Space Grotesk',sans-serif; font-size:14.5px; font-weight:700; margin-top:8px;}
+  .svc p{font-size:12.3px; color:var(--ink-600); margin-top:8px; line-height:1.6;}
+
+  /* CONTACT */
+  .contact-band{background:var(--ink-900); border-radius:22px; padding:52px 48px; color:#fff; position:relative; overflow:hidden;}
+  .contact-band::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 85% 0%, rgba(11,95,166,0.35), transparent 55%);}
+  .contact-band h2{position:relative; font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; max-width:520px;}
+  .contact-band p{position:relative; color:#b7c0cc; margin-top:12px; font-size:14.5px; max-width:460px;}
+  .contact-links{position:relative; display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .clink{display:flex; align-items:center; gap:9px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); padding:12px 18px; border-radius:10px; font-size:13px; font-weight:600;}
+  .clink .k{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:#7fb2e5;}
+
+  footer{padding:28px 0 40px; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--ink-400); font-family:'JetBrains Mono',monospace; flex-wrap:wrap; gap:10px;}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:34px;}
+    .about-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    nav.links{display:none;}
+    .schema-tag{display:none;}
+    .contact-band{padding:34px 24px;}
+  }
+</style>
+</head>
+<body class="grid-bg">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span>Wajahat Wasti</div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span>Available for new engagements</span>
+      <h1>Wajahat Wasti — <span class="hl">AX2012 &amp; D365 F&amp;O</span> Technical Consultant</h1>
+      <p class="lead">Software Engineer with 5+ years across Microsoft Dynamics AX2012 and Dynamics 365 Finance &amp; Operations — equally comfortable in X++ code and in functional setup, covering both the technical and functional sides of ERP delivery.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><b>5+</b><span>YEARS EXPERIENCE</span></div>
+        <div class="stat"><b>2</b><span>PLATFORMS · AX2012 / D365</span></div>
+        <div class="stat"><b>T+F</b><span>TECHNICAL &amp; FUNCTIONAL</span></div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn-primary" href="#contact">Let's talk</a>
+        <a class="btn-ghost" href="#experience">View experience</a>
+      </div>
+    </div>
+
+    <div class="photo-wrap">
+      <div class="photo-card">
+        <img src="assets/wajahat.jpg" alt="Wajahat Wasti">
+      </div>
+      <div class="schema-tag t1"><span class="led"></span><span class="k">Class</span> ShopifyAPI_Service</div>
+      <div class="schema-tag t2"><span class="k">Table</span> InventTable · <span class="k">Field</span> Stopped</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-label"><span class="idx">01</span><h2>About</h2><div class="rule"></div></div>
+    <div class="about-grid">
+      <div>
+        <p>I'm a software engineer specializing in Microsoft Dynamics AX2012 and Dynamics 365 Finance &amp; Operations, with over five years of hands-on experience spanning both technical development and functional configuration.</p>
+        <p>On the technical side, I work across X++ development, AOT customizations, integrations (including retail and e-commerce platforms like Shopify), SSRS reporting, and the Data Management Framework for bulk data operations.</p>
+        <p>On the functional side, I work with Product Information Management, Inventory &amp; Warehouse Management, Sales and Purchase order processing, Master Planning, Retail store operations, and troubleshooting posting and calculation issues end-to-end.</p>
+      </div>
+      <div class="about-side">
+        <div class="row"><span>ROLE</span><span>Software Engineer</span></div>
+        <div class="row"><span>FOCUS</span><span>AX2012 · D365 F&amp;O</span></div>
+        <div class="row"><span>TRACK</span><span>Technical + Functional</span></div>
+        <div class="row"><span>EXPERIENCE</span><span>5+ Years</span></div>
+        <div class="row"><span>DOMAINS</span><span>Retail · Supply Chain · PIM</span></div>
+        <div class="row"><span>STATUS</span><span>Open to work</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-label"><span class="idx">02</span><h2>Skills</h2><div class="rule"></div></div>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="sk-head"><div class="sk-ic" style="background:var(--blue);">X++</div><h3>Technical Development</h3></div>
+        <div class="tag-row">
+          <span class="tag">X++</span><span class="tag">AOT</span><span class="tag">Classes &amp; Forms</span>
+          <span class="tag">SSRS Reports</span><span class="tag">DMF</span><span class="tag">Batch Jobs</span>
+          <span class="tag">API Integrations</span><span class="tag">Project Import/Export</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-head"><div class="sk-ic" style="background:var(--copper);">PIM</div><h3>Functional — Supply Chain</h3></div>
+        <div class="tag-row">
+          <span class="tag">Product Information Mgmt</span><span class="tag">Released Products</span>
+          <span class="tag">Item Coverage / Min-Max</span><span class="tag">Inventory Dimensions</span>
+          <span class="tag">Master Planning</span><span class="tag">Warehouse Mgmt</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-head"><div class="sk-ic" style="background:var(--ok);">RTL</div><h3>Retail &amp; Commerce</h3></div>
+        <div class="tag-row">
+          <span class="tag">Retail Store Transactions</span><span class="tag">POS Integration</span>
+          <span class="tag">Shopify Integration</span><span class="tag">Statement Posting</span>
+          <span class="tag">Sales Order Processing</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-head"><div class="sk-ic" style="background:#7c5cff;">DB</div><h3>Data &amp; Diagnostics</h3></div>
+        <div class="tag-row">
+          <span class="tag">SQL Queries</span><span class="tag">Duplicate Data Analysis</span>
+          <span class="tag">Root Cause Diagnosis</span><span class="tag">Data Cleansing</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-head"><div class="sk-ic" style="background:#c94f4f;">FIN</div><h3>Finance &amp; Operations</h3></div>
+        <div class="tag-row">
+          <span class="tag">Financial Dimensions</span><span class="tag">Purchase Orders</span>
+          <span class="tag">Sales Orders</span><span class="tag">Posting &amp; Calculation</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-head"><div class="sk-ic" style="background:#0e7c86;">SYS</div><h3>Platform &amp; Tools</h3></div>
+        <div class="tag-row">
+          <span class="tag">Dynamics AX2012</span><span class="tag">Dynamics 365 F&amp;O</span>
+          <span class="tag">Visual Studio</span><span class="tag">LCS</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-label"><span class="idx">03</span><h2>Experience</h2><div class="rule"></div></div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-role">Software Engineer — AX2012 / D365 F&amp;O</div>
+        <div class="t-meta mono">TECHNICAL &amp; FUNCTIONAL · 5+ YEARS</div>
+        <p>Delivering end-to-end ERP support across development and functional configuration — X++ customizations, integrations, report building, and troubleshooting posting, calculation, and data-integrity issues across sales, retail, and inventory modules.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-role">Retail &amp; E-commerce Integration</div>
+        <div class="t-meta mono">SHOPIFY · RETAIL TRANSACTIONS · POS</div>
+        <p>Built and maintained integrations connecting external commerce platforms with Dynamics, including service classes for order sync and diagnosing duplicate sales order issues in retail transaction flows.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-role">Product &amp; Inventory Configuration</div>
+        <div class="t-meta mono">PIM · ITEM COVERAGE · MASTER PLANNING</div>
+        <p>Configured released products, product masters, and warehouse-level min/max replenishment setups to support accurate, automated inventory planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-label"><span class="idx">04</span><h2>What I do</h2><div class="rule"></div></div>
+    <div class="services-grid">
+      <div class="svc"><div class="n">01</div><h4>X++ Development</h4><p>Custom classes, forms, and business logic across AX2012 and D365 F&amp;O.</p></div>
+      <div class="svc"><div class="n">02</div><h4>Integrations</h4><p>Retail, e-commerce, and third-party API integrations into Dynamics.</p></div>
+      <div class="svc"><div class="n">03</div><h4>Functional Setup</h4><p>PIM, inventory, sales, and warehouse configuration end-to-end.</p></div>
+      <div class="svc"><div class="n">04</div><h4>Data Diagnostics</h4><p>Query-based root cause analysis for posting and data issues.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-band">
+      <h2>Let's build something on Dynamics, together.</h2>
+      <p>Open to technical, functional, or hybrid AX2012 / D365 F&amp;O engagements. Reach out and I'll get back to you.</p>
+      <div class="contact-links">
+        <a class="clink" href="mailto:your.email@example.com"><span class="k">EMAIL</span> your.email@example.com</a>
+        <a class="clink" href="https://linkedin.com/in/your-profile" target="_blank"><span class="k">LINKEDIN</span> /in/your-profile</a>
+        <a class="clink" href="https://github.com/your-username" target="_blank"><span class="k">GITHUB</span> /your-username</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Wajahat Wasti</span>
+  <span>BUILT FOR DYNAMICS AX2012 / D365 F&amp;O</span>
+</footer>
+
+</body>
+</html>
